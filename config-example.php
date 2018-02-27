@@ -6,12 +6,12 @@ defined( 'NODEMON_RUNNING') || die( 'Access denied.' );
 // for more info about these options.
 
 $nodeconfig = array(
-    'pagetitle' => 'Node Interface',
+    'pagetitle' => 'Bitcoin Node Interface',
     'pagedesc' => '',
     'autorefresh' => 300,
-    'serverurl' => 'http://127.0.0.1:9332/',
-    'coinname' => "LTC",
-    'projectname' => 'Litecoin Core',
+    'serverurl' => 'http://127.0.0.1:8332/',
+    'coinname' => "BTC",
+    'projectname' => 'Bitcoin Core',
     'username' => 'rpcuser',
     'password' => 'rpcpass',
     'broadcast' => false,
