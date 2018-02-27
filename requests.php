@@ -37,34 +37,84 @@ function send_request( $request, $username='', $password='', $serverurl='' ) {
     return json_decode( $response, true );
 }
 
-$getnetinfo = send_request(
-    create_request( 'getnetworkinfo' )
-);
-
-$getpeerinfo = send_request(
-    create_request( 'getpeerinfo' )
-);
-
-$listbanned = send_request(
-    create_request( 'listbanned' )
-);
-
-$getbcinfo = send_request(
-    create_request( 'getblockchaininfo' )
-);
-
-$getnettotals = send_request(
-    create_request( 'getnettotals' )
-);
-
-$getmpinfo = send_request(
-    create_request( 'getmempoolinfo' )
-);
-
-if( $getnetinfo['result']['version'] > 150000 ) {
-    $uptime = send_request(
-        create_request( 'uptime' )
+try {
+    $getnetinfo = send_request(
+        create_request( 'getnetworkinfo' )
     );
+
+    $getnetinfofailed = false;
+} catch (\Exception $e) {
+    $getnetinfofailed = true;
+    $getnetinfofailedreason = "Timed out: " . $e->getMessage();
 }
 
+try {
+    $getpeerinfo = send_request(
+        create_request( 'getpeerinfo' )
+    );
+
+    $getpeerinfofailed = false;
+} catch (\Exception $e) {
+    $getpeerinfofailed = true;
+    $getpeerinfofailedreason = "Timed out: " . $e->getMessage();
+}
+
+try {
+    $listbanned = send_request(
+        create_request( 'listbanned' )
+    );
+
+    $listbannedfailed = false;
+} catch (\Exception $e) {
+    $listbannedfailed = true;
+    $listbannedfailedreason = "Timed out: " . $e->getMessage();
+}
+
+try {
+    $getbcinfo = send_request(
+        create_request( 'getblockchaininfo' )
+    );
+
+    $getbcinfofailed = false;
+} catch (\Exception $e) {
+    $getbcinfofailed = true;
+    $getbcinfofailedreason = "Timed out: " . $e->getMessage();
+}
+
+try {
+    $getnettotals = send_request(
+        create_request( 'getnettotals' )
+    );
+
+    $getnettotalsfailed = false;
+} catch (\Exception $e) {
+    $getnettotalsfailed = true;
+    $getnettotalsfailedreason = "Timed out: " . $e->getMessage();
+}
+
+try {
+    $getmpinfo = send_request(
+        create_request( 'getmempoolinfo' )
+    );
+
+    $getmpinfofailed = false;
+} catch (\Exception $e) {
+    $getmpinfofailed = true;
+    $getmpinfofailedreason = "Timed out: " . $e->getMessage();
+}
+
+if ( $getnetinfofailed != true ) {
+    if ( $getnetinfo ['result']['version'] > 150000 ) {
+        try {
+            $uptime = send_request(
+                create_request( 'uptime' )
+            );
+
+            $getuptimefailed = false;
+        } catch (\Exception $e) {
+            $getuptimefailed = true;
+            $getuptimefailedreason = "Timed out: " . $e->getMessage();
+        }
+    }
+}
 ?>
