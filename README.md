@@ -1,6 +1,6 @@
 # Litecoin Node Interface
 
-This is a basic web status page for Litecoin<sup>1</sup> full nodes. It's not pretty, but it works. If you want to see how it looks, a demo is available [here](https://ltc.xblau.com).
+This is a basic web status page for Litecoin (and related) full nodes. If you want to see how it looks, a demo is available [here](https://ltc.xblau.com).
 
 You can use it to check thing like:
 
@@ -10,8 +10,6 @@ You can use it to check thing like:
 - **Connected peers:** Info about inbound ant outbound connections to your node.
 
 If you have any problems or suggestions, feel free to open an issue or pull request.
-
-<sup>1: While I did it with Litecoin in mind, it should work with bitcoin or any of its forks without problems.</sup>
 
 ### [Security](#security)
 
@@ -33,6 +31,8 @@ On Debian and derivates (Ubuntu, etc) you can install everything with
 
 For other distros, there are a lot of awesome tutorials online you can check.
 
+On Windows, easyphp does this fairly easily.
+
 ### [Installing](#installing)
 
 First thing you need to do is add an username/password to the node configuration. Add the following lines to your `litecoin.conf` file:
@@ -47,7 +47,7 @@ Once you do it, restart the daemon:
 
 After that, clone this repository in an empty, publicly accessible directory:
 
-    $ git clone https://github.com/xblau/node-interface.git .
+    $ git clone https://github.com/link07/node-interface.git .
 
 Now, copy (*not rename*) the example config file to `config.php`:
 
@@ -65,4 +65,10 @@ Simply run `git pull`. This should get any new commits and apply them to your lo
 
 This project is free software, licensed under the terms of the MIT License. See the `LICENSE` file on this repository or [opensource.org/licenses/mit](https://opensource.org/licenses/mit).
 
-If you liked or found this useful, starring this repo on GitHub or sending an email (even if it's just a "Hey, I'm using your project") helps a lot! Also, in case you want to send a tip: `LXBLauKyugeQGY2m8JZSMQJzc9rR1yNXgR`.
+If you liked or found this useful, starring this repo on GitHub or sending an email (even if it's just a "Hey, I'm using your project") helps a lot!
+
+Also, in case you want to send a tip (to this fork):
+ltc: `LM2YuS1yfgdXSLmE7pyMYNQ7QqiBrTaoyq`.
+btc: `1MgNbJtxbnTXdo95NiHA7kbSdeVR28o65C`
+
+Or to the original creator: `LXBLauKyugeQGY2m8JZSMQJzc9rR1yNXgR`
