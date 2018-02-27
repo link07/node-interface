@@ -1,6 +1,8 @@
-# Litecoin Node Interface
+# Bitcoin Node Interface
 
-This is a basic web status page for Litecoin (and related) full nodes. If you want to see how it looks, a demo is available [here](https://ltc.xblau.com).
+This is a basic web status page for Bitcoin (and related) full nodes. If you want to see how it looks, a demo is available [here](https://ltc.xblau.com).
+
+This was originally built as a Litecoin node interface, but it works fine on Bitcoin nodes, and other related nodes.
 
 You can use it to check thing like:
 
@@ -42,8 +44,8 @@ First thing you need to do is add an username/password to the node configuration
 
 Once you do it, restart the daemon:
 
-    $ litecoin-cli stop
-    $ litecoind -daemon
+    $ bitcoin-cli stop
+    $ bitcoind -daemon
 
 After that, clone this repository in an empty, publicly accessible directory:
 
