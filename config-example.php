@@ -8,7 +8,7 @@ defined( 'NODEMON_RUNNING') || die( 'Access denied.' );
 $nodeconfig = array(
     'pagetitle' => 'Node Interface',
     'pagedesc' => '',
-    'autorefresh' => 120,
+    'autorefresh' => 300,
     'serverurl' => 'http://127.0.0.1:9332/',
     'username' => 'rpcuser',
     'password' => 'rpcpass',
